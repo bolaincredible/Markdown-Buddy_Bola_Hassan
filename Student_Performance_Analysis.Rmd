@@ -1,0 +1,55 @@
+---
+title: "Documentation: Synthetic Student Performance Analysis"
+author: "Bola_Hassan"
+---
+
+## AI Assistance Declaration
+
+**AI Assistance Declaration:** I used ChatGPT (GPT-6) for documentation planning, Markdown formatting suggestions, and drafting support. Prompts used are recorded in `Appendix_AI_Prompts.md`. I reviewed and edited the generated documentation and must validate the code and rendered file before submission. All final calculations and interpretation are completed and verified by me. I am responsible for the accuracy and originality of this work.
+
+## Purpose
+
+This document describes `analyze_student_performance.R`, an instructional script that explores a synthetic student-performance dataset. It summarizes study hours, attendance, and assessment scores, identifies records below an example score threshold, and creates a basic visualization.
+
+## Inputs
+
+- `data/synthetic_student_data.csv`
+- Required columns: `student_id`, `study_hours`, `attendance_pct`, and `score`
+- All records are fictional and created for demonstration.
+
+## Dependencies
+
+The script uses base R functions and the `ggplot2` package for visualization.
+
+```{r setup, eval=FALSE}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+## Workflow
+
+1. Read the CSV file.
+2. Inspect the data.
+3. Produce descriptive summaries.
+4. Apply an illustrative score threshold of 60.
+5. Plot study hours against assessment scores.
+
+## Example Code
+
+The following code illustrates the import and inspection steps. The full script is in `analyze_student_performance.R`.
+
+```{r import, eval=FALSE}
+student_data <- read.csv("data/synthetic_student_data.csv")
+str(student_data)
+summary(student_data)
+```
+
+## Outputs
+
+- Summary information printed to the R console.
+- A table of records with scores below the example threshold.
+- A scatter plot showing study hours and scores.
+
+## Interpretation and Limitations
+
+The score threshold is included solely to demonstrate a filtering operation. It should not be treated as a validated definition of academic risk. The dataset is synthetic and small, and the visualization cannot establish that study hours cause score differences.
